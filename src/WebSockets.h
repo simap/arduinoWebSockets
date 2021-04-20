@@ -68,7 +68,7 @@
 #define WEBSOCKETS_YIELD_MORE() delay(1)
 #elif defined(ESP32)
 #define WEBSOCKETS_YIELD() yield()
-#define WEBSOCKETS_YIELD_MORE() delay(1)
+#define WEBSOCKETS_YIELD_MORE() delay(5)
 #endif
 
 #elif defined(STM32_DEVICE)
@@ -89,6 +89,7 @@
 #endif
 
 #define WEBSOCKETS_TCP_TIMEOUT (5000)
+#define WEBSOCKETS_TCP_TIMEOUT_SEC (5)
 
 #define NETWORK_ESP8266_ASYNC (0)
 #define NETWORK_ESP8266 (1)

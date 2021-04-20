@@ -473,7 +473,7 @@ bool WebSocketsServer::newClient(WEBSOCKETS_NETWORK_CLASS * TCPclient) {
 #endif
 #if(WEBSOCKETS_NETWORK_TYPE != NETWORK_ESP8266_ASYNC)
             // set Timeout for readBytesUntil and readStringUntil
-            client->tcp->setTimeout(WEBSOCKETS_TCP_TIMEOUT);
+            client->tcp->setTimeout(WEBSOCKETS_TCP_TIMEOUT_SEC);
 #endif
             client->status = WSC_HEADER;
 #if(WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP8266) || (WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP8266_ASYNC) || (WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP32)
