@@ -85,7 +85,7 @@ class WebSocketsServer : protected WebSockets {
     bool broadcastPing(String & payload);
 
     void disconnect(void);
-    void disconnect(uint8_t num);
+    void disconnect(uint8_t num, bool immediate = false);
 
     void setAuthorization(const char * user, const char * password);
     void setAuthorization(const char * auth);

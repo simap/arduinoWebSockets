@@ -367,13 +367,16 @@ void WebSocketsServer::disconnect(void) {
  * disconnect one client
  * @param num uint8_t client id
  */
-void WebSocketsServer::disconnect(uint8_t num) {
+void WebSocketsServer::disconnect(uint8_t num, bool immediate) {
     if(num >= WEBSOCKETS_SERVER_CLIENT_MAX) {
         return;
     }
     WSclient_t * client = &_clients[num];
     if(clientIsConnected(client)) {
-        WebSockets::clientDisconnect(client, 1000);
+        if (immediate)
+            clientDisconnect(client);
+        else
+            WebSockets::clientDisconnect(client, 1000);
     }
 }
 
