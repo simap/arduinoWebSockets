@@ -762,7 +762,7 @@ void WebSocketsClient::connectedCb() {
 
 #if(WEBSOCKETS_NETWORK_TYPE != NETWORK_ESP8266_ASYNC)
     // set Timeout for readBytesUntil and readStringUntil
-    _client.tcp->setTimeout(WEBSOCKETS_TCP_TIMEOUT);
+    _client.tcp->setTimeout(WEBSOCKETS_TCP_TIMEOUT_SEC);
 #endif
 
 #if(WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP8266) || (WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP32)
